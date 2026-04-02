@@ -1219,6 +1219,15 @@
           "effective_sample_size": 500,
           "train_split_size": 2000,
           "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "github",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\github_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
         }
       ],
       "skipped_existing": [
