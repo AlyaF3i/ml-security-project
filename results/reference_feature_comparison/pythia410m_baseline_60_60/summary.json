@@ -1,0 +1,35 @@
+{
+  "model_name": "EleutherAI/pythia-410m",
+  "dataset_name": "wikipedia",
+  "member_split": "train",
+  "nonmember_split": "val",
+  "num_member": 60,
+  "num_nonmember": 60,
+  "num_seeds": 10,
+  "device_used": "cuda",
+  "aggregation_method": "linear",
+  "include_reference_features": false,
+  "reference_model_aliases": [],
+  "best_single_feature": {
+    "name": "k_min_probs_0.05",
+    "median_heldout_auc": 0.685
+  },
+  "dataset_level": {
+    "mean_p_value": 0.06515703102249817,
+    "median_p_value": 0.01985085605103945,
+    "sidak_combined_p_value": 0.5420653239470299,
+    "mean_gap_nonmember_minus_member": 1.086410515010357
+  },
+  "runtime_seconds": 16.57468499999959,
+  "peak_gpu_memory_gb": 2.092210292816162,
+  "runtime_breakdown_seconds": {
+    "victim_member_metrics": 6.246954400001414,
+    "victim_nonmember_metrics": 6.016195299998799,
+    "reference_models_total": 0.0
+  },
+  "gpu_memory_breakdown_gb": {
+    "victim_after_load": 0.7549939155578613,
+    "victim_peak": 2.092210292816162
+  },
+  "reference_runtime_details": []
+}

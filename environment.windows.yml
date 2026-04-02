@@ -1,0 +1,17 @@
+name: llm-di-win
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - torch==2.6.0 --index-url https://download.pytorch.org/whl/cu124
+      - numpy<2.3
+      - scipy
+      - pandas
+      - tqdm
+      - accelerate
+      - transformers>=4.53,<4.54
+      - datasets>=3.5,<3.6
+      - sentencepiece
+      - pypdf

@@ -1,0 +1,16 @@
+{
+  "model_name": "EleutherAI/pythia-410m",
+  "dataset_name": "wikipedia",
+  "member_split": "train",
+  "nonmember_split": "val",
+  "num_member": 20,
+  "num_nonmember": 20,
+  "max_length": 512,
+  "batch_size": 4,
+  "num_seeds": 5,
+  "base_seed": 11,
+  "device": "auto",
+  "aggregation_method": "linear",
+  "train_epochs": 500,
+  "output_dir": "results\\pilot_20"
+}

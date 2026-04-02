@@ -1,0 +1,100 @@
+{
+  "model_name": "EleutherAI/pythia-410m",
+  "dataset_name": "wikipedia",
+  "member_split": "train",
+  "nonmember_split": "val",
+  "num_member": 8,
+  "num_nonmember": 8,
+  "num_seeds": 2,
+  "device_used": "cuda",
+  "aggregation_method": "linear",
+  "include_reference_features": true,
+  "reference_model_aliases": [
+    "tinystories-1M",
+    "tinystories-33M",
+    "phi-1_5"
+  ],
+  "best_single_feature": {
+    "name": "k_min_probs_0.05",
+    "median_heldout_auc": 0.75
+  },
+  "dataset_level": {
+    "mean_p_value": 0.5955323769034312,
+    "median_p_value": 0.5955323769034312,
+    "sidak_combined_p_value": 0.9498653095440148,
+    "mean_gap_nonmember_minus_member": -3.0874593257904053
+  },
+  "runtime_seconds": 116.79268799999772,
+  "peak_gpu_memory_gb": 2.986600875854492,
+  "runtime_breakdown_seconds": {
+    "victim_member_metrics": 0.7163829999990412,
+    "victim_nonmember_metrics": 0.4705446999978449,
+    "reference_models_total": 112.81294020000132
+  },
+  "gpu_memory_breakdown_gb": {
+    "victim_after_load": 0.7549939155578613,
+    "victim_peak": 1.1035780906677246,
+    "reference_tinystories-1M_member": 0.19361305236816406,
+    "reference_tinystories-1M_nonmember": 0.19361305236816406,
+    "reference_tinystories-33M_member": 0.3113703727722168,
+    "reference_tinystories-33M_nonmember": 0.3113703727722168,
+    "reference_phi-1_5_member": 2.986600875854492,
+    "reference_phi-1_5_nonmember": 2.986600875854492
+  },
+  "reference_runtime_details": [
+    {
+      "alias": "tinystories-1M",
+      "model_name": "roneneldan/TinyStories-1M",
+      "split_name": "member",
+      "cache_hit": false,
+      "runtime_seconds": 2.031141100000241,
+      "peak_gpu_memory_gb": 0.19361305236816406,
+      "cache_file": "results\\reference_model_cache\\roneneldan__TinyStories-1M\\wikipedia_member_n8_l256_ppl.csv"
+    },
+    {
+      "alias": "tinystories-1M",
+      "model_name": "roneneldan/TinyStories-1M",
+      "split_name": "nonmember",
+      "cache_hit": false,
+      "runtime_seconds": 1.8542983999977878,
+      "peak_gpu_memory_gb": 0.19361305236816406,
+      "cache_file": "results\\reference_model_cache\\roneneldan__TinyStories-1M\\wikipedia_nonmember_n8_l256_ppl.csv"
+    },
+    {
+      "alias": "tinystories-33M",
+      "model_name": "roneneldan/TinyStories-33M",
+      "split_name": "member",
+      "cache_hit": false,
+      "runtime_seconds": 17.4513936000003,
+      "peak_gpu_memory_gb": 0.3113703727722168,
+      "cache_file": "results\\reference_model_cache\\roneneldan__TinyStories-33M\\wikipedia_member_n8_l256_ppl.csv"
+    },
+    {
+      "alias": "tinystories-33M",
+      "model_name": "roneneldan/TinyStories-33M",
+      "split_name": "nonmember",
+      "cache_hit": false,
+      "runtime_seconds": 2.1736375000000407,
+      "peak_gpu_memory_gb": 0.3113703727722168,
+      "cache_file": "results\\reference_model_cache\\roneneldan__TinyStories-33M\\wikipedia_nonmember_n8_l256_ppl.csv"
+    },
+    {
+      "alias": "phi-1_5",
+      "model_name": "microsoft/phi-1_5",
+      "split_name": "member",
+      "cache_hit": false,
+      "runtime_seconds": 86.24186010000267,
+      "peak_gpu_memory_gb": 2.986600875854492,
+      "cache_file": "results\\reference_model_cache\\microsoft__phi-1_5\\wikipedia_member_n8_l256_ppl.csv"
+    },
+    {
+      "alias": "phi-1_5",
+      "model_name": "microsoft/phi-1_5",
+      "split_name": "nonmember",
+      "cache_hit": false,
+      "runtime_seconds": 3.0606095000002824,
+      "peak_gpu_memory_gb": 2.986600875854492,
+      "cache_file": "results\\reference_model_cache\\microsoft__phi-1_5\\wikipedia_nonmember_n8_l256_ppl.csv"
+    }
+  ]
+}

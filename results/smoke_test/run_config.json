@@ -1,0 +1,14 @@
+{
+  "model_name": "EleutherAI/pythia-410m",
+  "dataset_name": "wikipedia",
+  "member_split": "train",
+  "nonmember_split": "val",
+  "num_member": 6,
+  "num_nonmember": 6,
+  "max_length": 256,
+  "batch_size": 2,
+  "num_seeds": 2,
+  "base_seed": 11,
+  "device": "auto",
+  "output_dir": "results\\smoke_test"
+}

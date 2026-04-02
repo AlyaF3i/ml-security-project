@@ -1,0 +1,84 @@
+{
+  "model_name": "EleutherAI/pythia-410m-deduped",
+  "model_label": "Deduped",
+  "model_size_b": 0.41,
+  "requested_dataset_names": [
+    "stackexchange",
+    "wikipedia",
+    "cc",
+    "github",
+    "pubmed_abstracts",
+    "openwebtext2",
+    "freelaw",
+    "math",
+    "uspto",
+    "hackernews",
+    "books3",
+    "pubmed_central",
+    "gutenberg",
+    "arxiv",
+    "bookcorpus2",
+    "opensubtitles",
+    "youtubesubtitles",
+    "ubuntu",
+    "europarl",
+    "philpapers"
+  ],
+  "skipped_dataset_names": [
+    "pubmed_abstracts",
+    "pubmed_central"
+  ],
+  "available_dataset_names": [
+    "arxiv",
+    "bookcorpus2",
+    "books3",
+    "cc",
+    "enron",
+    "europarl",
+    "freelaw",
+    "github",
+    "gutenberg",
+    "hackernews",
+    "math",
+    "nih",
+    "opensubtitles",
+    "openwebtext2",
+    "philpapers",
+    "stackexchange",
+    "ubuntu",
+    "uspto",
+    "wikipedia",
+    "youtubesubtitles"
+  ],
+  "dataset_results": [],
+  "failed_datasets": [
+    {
+      "dataset": "stackexchange",
+      "error": "name 'device' is not defined"
+    },
+    {
+      "dataset": "wikipedia",
+      "error": "name 'device' is not defined"
+    },
+    {
+      "dataset": "cc",
+      "error": "name 'device' is not defined"
+    },
+    {
+      "dataset": "github",
+      "error": "name 'device' is not defined"
+    },
+    {
+      "dataset": "openwebtext2",
+      "error": "name 'device' is not defined"
+    },
+    {
+      "dataset": "freelaw",
+      "error": "name 'device' is not defined"
+    },
+    {
+      "dataset": "stackexchange",
+      "error": "[Errno 2] No such file or directory: 'results/kernelmachine/silo-pdswby-1.3b/stackexchange_A_members_metrics.json'"
+    }
+  ]
+}

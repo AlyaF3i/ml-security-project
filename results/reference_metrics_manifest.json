@@ -1,0 +1,1385 @@
+{
+  "runs": [
+    {
+      "started_at_epoch": 1775144566.1873493,
+      "device": "cuda",
+      "sample_size": 500,
+      "batch_size": 20,
+      "max_length": 512,
+      "reference_model_aliases": [
+        "tinystories-33M",
+        "tinystories-1M",
+        "phi-1_5"
+      ],
+      "dataset_names": [
+        "stackexchange",
+        "wikipedia",
+        "cc",
+        "github",
+        "openwebtext2",
+        "freelaw",
+        "math",
+        "uspto",
+        "hackernews",
+        "books3",
+        "gutenberg",
+        "arxiv",
+        "bookcorpus2",
+        "opensubtitles",
+        "youtubesubtitles",
+        "ubuntu",
+        "europarl",
+        "philpapers"
+      ],
+      "completed": [
+        {
+          "alias": "tinystories-33M",
+          "dataset": "cc",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\cc_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "cc",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\cc_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "cc",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\cc_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "cc",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\cc_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "github",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\github_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "github",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\github_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "github",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\github_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "github",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\github_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "openwebtext2",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\openwebtext2_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "openwebtext2",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\openwebtext2_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "openwebtext2",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\openwebtext2_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "openwebtext2",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\openwebtext2_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "freelaw",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\freelaw_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "freelaw",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\freelaw_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "freelaw",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\freelaw_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "freelaw",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\freelaw_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "math",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\math_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "math",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\math_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "math",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\math_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "math",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\math_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "uspto",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\uspto_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "uspto",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\uspto_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "uspto",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\uspto_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "uspto",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\uspto_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "hackernews",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\hackernews_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "hackernews",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\hackernews_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "hackernews",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\hackernews_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "hackernews",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\hackernews_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "books3",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\books3_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "books3",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\books3_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "books3",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\books3_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "books3",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\books3_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "gutenberg",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\gutenberg_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "gutenberg",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\gutenberg_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "gutenberg",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\gutenberg_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "gutenberg",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\gutenberg_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "arxiv",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\arxiv_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "arxiv",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\arxiv_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "arxiv",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\arxiv_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "arxiv",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\arxiv_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "bookcorpus2",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\bookcorpus2_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "bookcorpus2",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\bookcorpus2_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "bookcorpus2",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\bookcorpus2_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "bookcorpus2",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\bookcorpus2_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "opensubtitles",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\opensubtitles_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "opensubtitles",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\opensubtitles_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "opensubtitles",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\opensubtitles_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "opensubtitles",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\opensubtitles_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "youtubesubtitles",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\youtubesubtitles_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "youtubesubtitles",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\youtubesubtitles_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "youtubesubtitles",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\youtubesubtitles_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "youtubesubtitles",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\youtubesubtitles_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "ubuntu",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\ubuntu_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "ubuntu",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\ubuntu_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "ubuntu",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\ubuntu_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "ubuntu",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\ubuntu_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "europarl",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\europarl_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "europarl",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\europarl_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "europarl",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\europarl_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "europarl",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\europarl_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "philpapers",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\philpapers_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 1867,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "philpapers",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\philpapers_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 1867,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "philpapers",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\philpapers_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 1867,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "philpapers",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\philpapers_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 1867,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "cc",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\cc_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "cc",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\cc_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "cc",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\cc_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "github",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\github_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "github",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\github_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "github",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\github_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "github",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\github_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "openwebtext2",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\openwebtext2_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "openwebtext2",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\openwebtext2_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "openwebtext2",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\openwebtext2_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "openwebtext2",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\openwebtext2_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "freelaw",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\freelaw_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "freelaw",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\freelaw_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "freelaw",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\freelaw_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "freelaw",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\freelaw_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "math",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\math_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "math",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\math_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "math",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\math_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "uspto",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\uspto_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "uspto",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\uspto_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "uspto",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\uspto_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "uspto",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\uspto_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "hackernews",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\hackernews_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "hackernews",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\hackernews_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "hackernews",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\hackernews_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "hackernews",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\hackernews_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "books3",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\books3_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "books3",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\books3_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "books3",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\books3_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "books3",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\books3_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "gutenberg",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\gutenberg_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "gutenberg",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\gutenberg_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "gutenberg",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\gutenberg_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "gutenberg",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\gutenberg_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "arxiv",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\arxiv_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "arxiv",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\arxiv_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "arxiv",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\arxiv_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "arxiv",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\arxiv_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "bookcorpus2",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\bookcorpus2_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "bookcorpus2",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\bookcorpus2_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "bookcorpus2",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\bookcorpus2_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "opensubtitles",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\opensubtitles_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "opensubtitles",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\opensubtitles_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "opensubtitles",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\opensubtitles_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "opensubtitles",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\opensubtitles_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "youtubesubtitles",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\youtubesubtitles_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "youtubesubtitles",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\youtubesubtitles_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "youtubesubtitles",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\youtubesubtitles_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "youtubesubtitles",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\youtubesubtitles_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "ubuntu",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\ubuntu_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "ubuntu",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\ubuntu_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "ubuntu",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\ubuntu_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "ubuntu",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\ubuntu_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "europarl",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\europarl_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "europarl",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\europarl_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "europarl",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\europarl_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "europarl",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\europarl_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "philpapers",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\philpapers_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 1867,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "philpapers",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\philpapers_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 1867,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "philpapers",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\philpapers_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 1867,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "philpapers",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\philpapers_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 1867,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "wikipedia",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\wikipedia_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "cc",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\cc_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "cc",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\cc_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "cc",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\cc_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "cc",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\cc_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "github",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\github_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "github",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\github_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        }
+      ],
+      "skipped_existing": [
+        {
+          "alias": "tinystories-33M",
+          "dataset": "stackexchange",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\stackexchange_A_members_metrics.json"
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "stackexchange",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\stackexchange_A_nonmembers_metrics.json"
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "stackexchange",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\stackexchange_B_members_metrics.json"
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "stackexchange",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\stackexchange_B_nonmembers_metrics.json"
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "wikipedia",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\wikipedia_A_members_metrics.json"
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "wikipedia",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\wikipedia_A_nonmembers_metrics.json"
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "wikipedia",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\wikipedia_B_members_metrics.json"
+        },
+        {
+          "alias": "tinystories-33M",
+          "dataset": "wikipedia",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-33M\\wikipedia_B_nonmembers_metrics.json"
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "stackexchange",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\stackexchange_A_members_metrics.json"
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "stackexchange",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\stackexchange_A_nonmembers_metrics.json"
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "stackexchange",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\stackexchange_B_members_metrics.json"
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "stackexchange",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\stackexchange_B_nonmembers_metrics.json"
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "wikipedia",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\wikipedia_A_members_metrics.json"
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "wikipedia",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\wikipedia_A_nonmembers_metrics.json"
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "wikipedia",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\wikipedia_B_members_metrics.json"
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "wikipedia",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\wikipedia_B_nonmembers_metrics.json"
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "cc",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\cc_A_members_metrics.json"
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "math",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\math_A_members_metrics.json"
+        },
+        {
+          "alias": "tinystories-1M",
+          "dataset": "bookcorpus2",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\roneneldan\\TinyStories-1M\\bookcorpus2_A_members_metrics.json"
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "stackexchange",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\stackexchange_A_members_metrics.json"
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "stackexchange",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\stackexchange_A_nonmembers_metrics.json"
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "stackexchange",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\stackexchange_B_members_metrics.json"
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "stackexchange",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\stackexchange_B_nonmembers_metrics.json"
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "wikipedia",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\wikipedia_A_members_metrics.json"
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "wikipedia",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\wikipedia_A_nonmembers_metrics.json"
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "wikipedia",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\wikipedia_B_members_metrics.json"
+        }
+      ],
+      "failed": []
+    }
+  ]
+}

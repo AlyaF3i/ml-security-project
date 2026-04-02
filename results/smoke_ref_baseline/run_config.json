@@ -1,0 +1,19 @@
+{
+  "model_name": "EleutherAI/pythia-410m",
+  "dataset_name": "wikipedia",
+  "member_split": "train",
+  "nonmember_split": "val",
+  "num_member": 8,
+  "num_nonmember": 8,
+  "max_length": 256,
+  "batch_size": 2,
+  "num_seeds": 2,
+  "base_seed": 11,
+  "device": "auto",
+  "aggregation_method": "linear",
+  "train_epochs": 500,
+  "include_reference_features": false,
+  "reference_model_aliases": "tinystories-1M,tinystories-33M,phi-1_5",
+  "reference_cache_dir": "results/reference_model_cache",
+  "output_dir": "results\\smoke_ref_baseline"
+}

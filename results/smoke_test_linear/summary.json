@@ -1,0 +1,21 @@
+{
+  "model_name": "EleutherAI/pythia-410m",
+  "dataset_name": "wikipedia",
+  "member_split": "train",
+  "nonmember_split": "val",
+  "num_member": 6,
+  "num_nonmember": 6,
+  "num_seeds": 2,
+  "device_used": "cuda",
+  "aggregation_method": "linear",
+  "best_single_feature": {
+    "name": "k_min_probs_0.05",
+    "median_heldout_auc": 0.6111111111111112
+  },
+  "dataset_level": {
+    "mean_p_value": 0.7107232553299294,
+    "median_p_value": 0.7107232553299294,
+    "sidak_combined_p_value": 0.9716616787713179,
+    "mean_gap_nonmember_minus_member": -5.838280916213989
+  }
+}
