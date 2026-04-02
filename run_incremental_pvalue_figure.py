@@ -331,10 +331,10 @@ def run_one_dataset(model, tokenizer, dataset_name, args, device):
         SimpleNamespace(dataset_name=dataset_name, split="A_members"),
         batch_size=args.batch_size,
     )
-    print("="*30)
-    print(len(A_members_metrics))
-    print(A_members_metrics.keys())
-    print("="*30)
+    # print("="*30)
+    # print(len(A_members_metrics))
+    # print(A_members_metrics.keys())
+    # print("="*30)
     A_nonmembers_metrics = aggregate_metrics(
         model,
         tokenizer,

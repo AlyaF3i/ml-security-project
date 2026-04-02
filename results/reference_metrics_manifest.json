@@ -1228,6 +1228,519 @@
           "effective_sample_size": 500,
           "train_split_size": 2000,
           "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "github",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\github_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "openwebtext2",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\openwebtext2_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "openwebtext2",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\openwebtext2_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "openwebtext2",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\openwebtext2_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "openwebtext2",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\openwebtext2_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "freelaw",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\freelaw_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "freelaw",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\freelaw_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "freelaw",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\freelaw_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "freelaw",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\freelaw_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "math",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\math_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "math",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\math_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "math",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\math_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "math",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\math_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "uspto",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\uspto_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "uspto",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\uspto_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "uspto",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\uspto_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "uspto",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\uspto_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "hackernews",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\hackernews_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "hackernews",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\hackernews_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "hackernews",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\hackernews_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "hackernews",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\hackernews_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "books3",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\books3_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "books3",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\books3_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "books3",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\books3_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "books3",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\books3_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "gutenberg",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\gutenberg_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "gutenberg",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\gutenberg_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "gutenberg",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\gutenberg_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "gutenberg",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\gutenberg_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "arxiv",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\arxiv_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "arxiv",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\arxiv_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "arxiv",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\arxiv_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "arxiv",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\arxiv_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "bookcorpus2",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\bookcorpus2_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "bookcorpus2",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\bookcorpus2_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "bookcorpus2",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\bookcorpus2_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "bookcorpus2",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\bookcorpus2_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "opensubtitles",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\opensubtitles_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "opensubtitles",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\opensubtitles_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "opensubtitles",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\opensubtitles_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "opensubtitles",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\opensubtitles_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "youtubesubtitles",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\youtubesubtitles_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "youtubesubtitles",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\youtubesubtitles_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "youtubesubtitles",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\youtubesubtitles_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "youtubesubtitles",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\youtubesubtitles_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "ubuntu",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\ubuntu_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "ubuntu",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\ubuntu_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "ubuntu",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\ubuntu_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "ubuntu",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\ubuntu_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "europarl",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\europarl_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "europarl",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\europarl_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "europarl",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\europarl_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "europarl",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\europarl_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 2000,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "philpapers",
+          "split": "A_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\philpapers_A_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 1867,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "philpapers",
+          "split": "A_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\philpapers_A_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 1867,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "philpapers",
+          "split": "B_members",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\philpapers_B_members_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 1867,
+          "val_split_size": 2000
+        },
+        {
+          "alias": "phi-1_5",
+          "dataset": "philpapers",
+          "split": "B_nonmembers",
+          "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\philpapers_B_nonmembers_metrics.json",
+          "effective_sample_size": 500,
+          "train_split_size": 1867,
+          "val_split_size": 2000
         }
       ],
       "skipped_existing": [
@@ -1388,7 +1901,8 @@
           "path": "C:\\Users\\user\\Desktop\\study\\Security\\project\\nips_inf\\results\\microsoft\\phi-1_5\\wikipedia_B_members_metrics.json"
         }
       ],
-      "failed": []
+      "failed": [],
+      "finished_at_epoch": 1775153774.209656
     }
   ]
 }
