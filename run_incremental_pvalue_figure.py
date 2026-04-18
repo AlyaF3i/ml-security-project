@@ -62,7 +62,16 @@ DEFAULT_DATASET_NAMES = [
 ]
 
 BASIC_METRIC_LIST = ["k_min_probs", "ppl", "zlib_ratio", "k_max_probs"]
-FULL_METRIC_DRIVERS = ["k_min_probs", "ppl", "zlib_ratio", "k_max_probs", "perturbation", "reference_model"]
+FULL_METRIC_DRIVERS = [
+    "k_min_probs",
+    "ppl",
+    "lowercase_ppl",
+    "min_k_plus_plus",
+    "zlib_ratio",
+    "k_max_probs",
+    "perturbation",
+    "reference_model",
+]
 COLOR_MAP = {
     "Deduped": "#4c72b0",
     "Non-Deduped": "#dd8452",

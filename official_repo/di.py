@@ -49,7 +49,16 @@ def main():
     if model_name in reference_model_registry.values():
         metric_list = ["ppl"]
     else:
-        metric_list = ["k_min_probs", "ppl", "zlib_ratio", "k_max_probs", "perturbation", "reference_model"]
+        metric_list = [
+            "k_min_probs",
+            "ppl",
+            "lowercase_ppl",
+            "min_k_plus_plus",
+            "zlib_ratio",
+            "k_max_probs",
+            "perturbation",
+            "reference_model",
+        ]
     metrics = aggregate_metrics(model, tokenizer, dataset, metric_list, args, batch_size = args.batch_size)
     
     # save the metrics
