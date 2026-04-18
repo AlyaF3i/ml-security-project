@@ -73,6 +73,63 @@ def raw_values(model, tokenizer, example_list, batch_size = 32):
         loss_list += raw_values_batch(model, tokenizer, batch)
     return loss_list
 
+
+def raw_values_with_normalized_losses_batch(model, tokenizer, example_list):
+    '''
+    Returns per-token losses and Min-K++ style normalized losses.
+    The normalization uses the mean and variance of token-level negative log-probabilities
+    under the model's next-token distribution at each position.
+    '''
+    max_length = tokenizer.model_max_length
+    input_ids = tokenizer(example_list, return_tensors="pt", padding=True, truncation=True, max_length=max_length)
+
+    if model.device.type == "cuda":
+        input_ids = {k: v.cuda() for k, v in input_ids.items()}
+
+    with torch.no_grad():
+        outputs = model(**input_ids)
+
+    labels = input_ids["input_ids"].clone()
+    labels[labels == tokenizer.pad_token_id] = -100
+
+    shifted_labels = labels[..., 1:].contiguous()
+    shifted_logits = outputs.logits[..., :-1, :].contiguous()
+    flat_labels = shifted_labels.view(-1)
+    flat_logits = shifted_logits.view(-1, shifted_logits.size(-1))
+
+    losses = loss_fct(flat_logits, flat_labels).view(shifted_labels.size(0), shifted_labels.size(1))
+    log_probs = torch.log_softmax(shifted_logits, dim=-1)
+    probs = torch.exp(log_probs)
+    neg_log_probs = -log_probs
+    entropy = torch.sum(probs * neg_log_probs, dim=-1)
+    variance = torch.sum(probs * (neg_log_probs - entropy.unsqueeze(-1)) ** 2, dim=-1)
+    std = torch.sqrt(torch.clamp(variance, min=1e-8))
+    normalized_losses = (losses - entropy) / std
+
+    valid_mask = shifted_labels != -100
+    loss_list = []
+    normalized_loss_list = []
+    for row_idx in range(valid_mask.size(0)):
+        row_mask = valid_mask[row_idx]
+        row_losses = losses[row_idx][row_mask].tolist()
+        row_normalized_losses = normalized_losses[row_idx][row_mask].tolist()
+        if row_losses:
+            loss_list.append(row_losses)
+            normalized_loss_list.append(row_normalized_losses)
+
+    return loss_list, normalized_loss_list
+
+
+def raw_values_with_normalized_losses(model, tokenizer, example_list, batch_size=32):
+    loss_list = []
+    normalized_loss_list = []
+    for i in tqdm.tqdm(range(0, len(example_list), batch_size)):
+        batch = example_list[i:i + batch_size]
+        batch_losses, batch_normalized_losses = raw_values_with_normalized_losses_batch(model, tokenizer, batch)
+        loss_list += batch_losses
+        normalized_loss_list += batch_normalized_losses
+    return loss_list, normalized_loss_list
+
 def k_min_probs(loss_list, k=0.05, reverse=False):
     '''
     This function takes a list of lists and returns the ppl of the k fraction smallest values in each list
@@ -234,12 +291,19 @@ def aggregate_metrics(model, tokenizer, dataset, metric_list, args, batch_size =
     metrics = {}
     if "ppl" in metric_list:
         metrics["ppl"] = perplexity(loss_list)
+    if "lowercase_ppl" in metric_list:
+        lowercase_list = [entry.lower() for entry in example_list]
+        metrics["lowercase_ppl"] = perplexity(raw_values(model, tokenizer, lowercase_list, batch_size=batch_size))
     if "k_min_probs" in metric_list:
         for k in [0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6]:
             metrics[f"k_min_probs_{k}"] = k_min_probs(loss_list, k=k)
     if "k_max_probs" in metric_list:
         for k in [0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6]:
             metrics[f"k_max_probs_{k}"] = k_min_probs(loss_list, k=k, reverse=True)
+    if "min_k_plus_plus" in metric_list:
+        _, normalized_loss_list = raw_values_with_normalized_losses(model, tokenizer, example_list, batch_size=batch_size)
+        for k in [0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6]:
+            metrics[f"min_k_plus_plus_{k}"] = k_min_probs(normalized_loss_list, k=k, reverse=True)
     if "zlib_ratio" in metric_list:
         metrics["zlib_ratio"] = zlib_ratio(loss_list, example_list)
 
