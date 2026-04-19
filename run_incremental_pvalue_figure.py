@@ -1,4 +1,5 @@
 import argparse
+import hashlib
 import json
 import sys
 import time
@@ -101,7 +102,9 @@ def parse_args():
     parser.add_argument("--train-epochs", type=int, default=1000)
     parser.add_argument("--num-random", type=int, default=1)
     parser.add_argument("--cache-dir", default=None)
+    parser.add_argument("--metric-cache-dir", default="results/metric_cache")
     parser.add_argument("--device", choices=["auto", "cuda", "cpu"], default="auto")
+    parser.add_argument("--cuda-dtype", choices=["auto", "float16", "bfloat16", "float32"], default="auto")
     parser.add_argument("--feature-mode", choices=["basic", "selected", "full"], default="basic")
     parser.add_argument("--normalize", choices=["no", "train", "combined"], default="train")
     parser.add_argument(
@@ -127,6 +130,20 @@ def choose_device(device_arg):
     if device_arg == "cpu":
         return torch.device("cpu")
     return torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+
+def choose_torch_dtype(device, cuda_dtype):
+    if device.type != "cuda":
+        return torch.float32
+    if cuda_dtype == "float16":
+        return torch.float16
+    if cuda_dtype == "bfloat16":
+        return torch.bfloat16
+    if cuda_dtype == "float32":
+        return torch.float32
+    if torch.cuda.is_bf16_supported():
+        return torch.bfloat16
+    return torch.float16
 
 
 def sanitize_name(name):
@@ -161,7 +178,7 @@ def load_model_and_tokenizer(model_name, max_length, cache_dir, device):
     tokenizer.padding_side = "right"
     tokenizer.model_max_length = max_length
 
-    torch_dtype = torch.float16 if device.type == "cuda" else torch.float32
+    torch_dtype = choose_torch_dtype(device, getattr(load_model_and_tokenizer, "cuda_dtype", "auto"))
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
         cache_dir=cache_dir,
@@ -186,6 +203,35 @@ def get_metric_drivers(feature_mode):
     return list(BASIC_METRIC_LIST)
 
 
+def safe_normalize_and_stack(train_metrics, val_metrics, normalize="train"):
+    new_train_metrics = []
+    new_val_metrics = []
+    for tm, vm in zip(train_metrics, val_metrics):
+        tm = np.asarray(tm, dtype=np.float64)
+        vm = np.asarray(vm, dtype=np.float64)
+        tm = np.nan_to_num(tm, nan=0.0, posinf=1e6, neginf=-1e6)
+        vm = np.nan_to_num(vm, nan=0.0, posinf=1e6, neginf=-1e6)
+
+        if normalize == "combined":
+            stats_source = np.concatenate((tm, vm))
+        else:
+            stats_source = tm
+
+        mean_tm = float(np.mean(stats_source))
+        std_tm = float(np.std(stats_source))
+        if normalize == "no" or not np.isfinite(std_tm) or std_tm < 1e-8:
+            normalized_tm = tm if normalize == "no" else tm - mean_tm
+            normalized_vm = vm if normalize == "no" else vm - mean_tm
+        else:
+            normalized_tm = (tm - mean_tm) / std_tm
+            normalized_vm = (vm - mean_tm) / std_tm
+
+        new_train_metrics.append(np.nan_to_num(normalized_tm, nan=0.0, posinf=1e6, neginf=-1e6))
+        new_val_metrics.append(np.nan_to_num(normalized_vm, nan=0.0, posinf=1e6, neginf=-1e6))
+
+    return np.stack(new_train_metrics, axis=1), np.stack(new_val_metrics, axis=1)
+
+
 def prepare_metrics(
     members_metrics,
     nonmembers_metrics,
@@ -200,17 +246,21 @@ def prepare_metrics(
     np_members_metrics = []
     np_nonmembers_metrics = []
     for key in keys:
-        members_metric_key = np.array(members_metrics[key])
-        nonmembers_metric_key = np.array(nonmembers_metrics[key])
+        members_metric_key = np.array(members_metrics[key], dtype=np.float64)
+        nonmembers_metric_key = np.array(nonmembers_metrics[key], dtype=np.float64)
+        members_metric_key = np.nan_to_num(members_metric_key, nan=0.0, posinf=1e6, neginf=-1e6)
+        nonmembers_metric_key = np.nan_to_num(nonmembers_metric_key, nan=0.0, posinf=1e6, neginf=-1e6)
 
         if outliers is not None and outliers != "keep":
             members_metric_key = remove_outliers(members_metric_key, remove_frac=0.05, outliers=outliers)
             nonmembers_metric_key = remove_outliers(nonmembers_metric_key, remove_frac=0.05, outliers=outliers)
+            members_metric_key = np.nan_to_num(members_metric_key, nan=0.0, posinf=1e6, neginf=-1e6)
+            nonmembers_metric_key = np.nan_to_num(nonmembers_metric_key, nan=0.0, posinf=1e6, neginf=-1e6)
 
         np_members_metrics.append(members_metric_key)
         np_nonmembers_metrics.append(nonmembers_metric_key)
 
-    np_members_metrics, np_nonmembers_metrics = normalize_and_stack(
+    np_members_metrics, np_nonmembers_metrics = safe_normalize_and_stack(
         np_members_metrics,
         np_nonmembers_metrics,
         normalize=normalize,
@@ -283,6 +333,40 @@ def configure_reference_registry(args):
     return aliases
 
 
+def build_metric_cache_path(metric_cache_dir, model_name, dataset_name, split_name, metric_drivers, max_length):
+    driver_key = hashlib.sha1(",".join(metric_drivers).encode("utf-8")).hexdigest()[:10]
+    cache_dir = PROJECT_ROOT / metric_cache_dir / sanitize_name(model_name)
+    filename = f"{dataset_name}_{split_name}_len{max_length}_{driver_key}.json"
+    return cache_dir / filename
+
+
+def metrics_are_finite(metrics):
+    for values in metrics.values():
+        array = np.asarray(values, dtype=np.float64)
+        if not np.all(np.isfinite(array)):
+            return False
+    return True
+
+
+def load_or_compute_metrics(model, tokenizer, dataset_split, metric_drivers, args_obj, batch_size, cache_path):
+    if cache_path.exists():
+        cached_metrics = json.loads(cache_path.read_text(encoding="utf-8"))
+        if metrics_are_finite(cached_metrics):
+            return cached_metrics
+
+    metrics = aggregate_metrics(
+        model,
+        tokenizer,
+        dataset_split,
+        metric_drivers,
+        args_obj,
+        batch_size=batch_size,
+    )
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
+    cache_path.write_text(json.dumps(metrics), encoding="utf-8")
+    return metrics
+
+
 def ensure_reference_metric_files(dataset_name, split_name, dataset_split, args, device):
     if "reference_model" not in get_metric_drivers(args.feature_mode):
         return
@@ -332,41 +416,41 @@ def run_one_dataset(model, tokenizer, dataset_name, args, device):
         ensure_reference_metric_files(dataset_name, "B_members", B_members, args, device)
         ensure_reference_metric_files(dataset_name, "B_nonmembers", B_nonmembers, args, device)
 
-    A_members_metrics = aggregate_metrics(
+    A_members_metrics = load_or_compute_metrics(
         model,
         tokenizer,
         A_members,
         metric_drivers,
         SimpleNamespace(dataset_name=dataset_name, split="A_members"),
-        batch_size=args.batch_size,
+        args.batch_size,
+        build_metric_cache_path(args.metric_cache_dir, args.model_name, dataset_name, "A_members", metric_drivers, args.max_length),
     )
-    # print("="*30)
-    # print(len(A_members_metrics))
-    # print(A_members_metrics.keys())
-    # print("="*30)
-    A_nonmembers_metrics = aggregate_metrics(
+    A_nonmembers_metrics = load_or_compute_metrics(
         model,
         tokenizer,
         A_nonmembers,
         metric_drivers,
         SimpleNamespace(dataset_name=dataset_name, split="A_nonmembers"),
-        batch_size=args.batch_size,
+        args.batch_size,
+        build_metric_cache_path(args.metric_cache_dir, args.model_name, dataset_name, "A_nonmembers", metric_drivers, args.max_length),
     )
-    B_members_metrics = aggregate_metrics(
+    B_members_metrics = load_or_compute_metrics(
         model,
         tokenizer,
         B_members,
         metric_drivers,
         SimpleNamespace(dataset_name=dataset_name, split="B_members"),
-        batch_size=args.batch_size,
+        args.batch_size,
+        build_metric_cache_path(args.metric_cache_dir, args.model_name, dataset_name, "B_members", metric_drivers, args.max_length),
     )
-    B_nonmembers_metrics = aggregate_metrics(
+    B_nonmembers_metrics = load_or_compute_metrics(
         model,
         tokenizer,
         B_nonmembers,
         metric_drivers,
         SimpleNamespace(dataset_name=dataset_name, split="B_nonmembers"),
-        batch_size=args.batch_size,
+        args.batch_size,
+        build_metric_cache_path(args.metric_cache_dir, args.model_name, dataset_name, "B_nonmembers", metric_drivers, args.max_length),
     )
 
     base_train_metrics, base_val_metrics = prepare_metrics(
@@ -407,6 +491,8 @@ def run_one_dataset(model, tokenizer, dataset_name, args, device):
             B_nonmembers_metrics_tensor,
             torch.ones(B_nonmembers_metrics_tensor.shape[0]),
         )
+        B_members_preds = np.nan_to_num(np.asarray(B_members_preds, dtype=np.float64), nan=0.0, posinf=1e6, neginf=-1e6)
+        B_nonmembers_preds = np.nan_to_num(np.asarray(B_nonmembers_preds, dtype=np.float64), nan=0.0, posinf=1e6, neginf=-1e6)
 
         if args.trim_heldout_frac > 0:
             B_members_preds = trim_scores(B_members_preds, args.trim_heldout_frac)
@@ -434,7 +520,8 @@ def run_one_dataset(model, tokenizer, dataset_name, args, device):
 
 
 def build_run_record(args, dataset_results, runtime_seconds, peak_gpu_memory_gb):
-    p_values = [row["p_value"] for row in dataset_results]
+    p_values = np.asarray([row["p_value"] for row in dataset_results], dtype=np.float64)
+    finite_p_values = p_values[np.isfinite(p_values)]
     return {
         "model_name": args.model_name,
         "model_label": args.model_label,
@@ -442,9 +529,11 @@ def build_run_record(args, dataset_results, runtime_seconds, peak_gpu_memory_gb)
         "dataset_names": sorted(set(row["dataset"] for row in dataset_results)),
         "metric_list": get_metric_drivers(args.feature_mode),
         "feature_mode": args.feature_mode,
+        "metric_cache_dir": args.metric_cache_dir,
         "sample_size": args.sample_size,
         "batch_size": args.batch_size,
         "max_length": args.max_length,
+        "cuda_dtype": args.cuda_dtype,
         "train_epochs": args.train_epochs,
         "num_random": args.num_random,
         "normalize": args.normalize,
@@ -455,9 +544,11 @@ def build_run_record(args, dataset_results, runtime_seconds, peak_gpu_memory_gb)
         "summary": {
             "num_datasets": len(sorted(set(row["dataset"] for row in dataset_results))),
             "num_p_values": len(dataset_results),
-            "mean_p_value": float(np.mean(p_values)),
-            "median_p_value": float(np.median(p_values)),
-            "num_below_0_1": int(sum(p < 0.1 for p in p_values)),
+            "num_finite_p_values": int(finite_p_values.size),
+            "num_nan_p_values": int(np.isnan(p_values).sum()),
+            "mean_p_value": float(np.mean(finite_p_values)) if finite_p_values.size else float("nan"),
+            "median_p_value": float(np.median(finite_p_values)) if finite_p_values.size else float("nan"),
+            "num_below_0_1": int(sum(p < 0.1 for p in finite_p_values)),
         },
         "dataset_results": dataset_results,
     }
@@ -632,6 +723,7 @@ def main():
     run_filename = build_run_filename(args.model_name, args.model_label, args.model_size_b)
     partial_run_path = runs_dir / (run_filename.replace(".json", ".partial.json"))
     device = choose_device(args.device)
+    load_model_and_tokenizer.cuda_dtype = args.cuda_dtype
 
     if device.type == "cuda":
         torch.cuda.empty_cache()
@@ -692,6 +784,7 @@ def main():
     run_record["skipped_dataset_names"] = skipped_datasets
     run_record["available_dataset_names"] = available_datasets
     run_record["failed_datasets"] = failed_datasets
+    run_record["summary"]["num_failed_datasets"] = len(failed_datasets)
     history, history_path, run_path = write_history_files(output_dir, args.history_file, run_record)
     if partial_run_path.exists():
         partial_run_path.unlink()
@@ -709,6 +802,9 @@ def main():
             "median_p_value": run_record["summary"]["median_p_value"],
             "mean_p_value": run_record["summary"]["mean_p_value"],
             "num_below_0_1": run_record["summary"]["num_below_0_1"],
+            "num_finite_p_values": run_record["summary"]["num_finite_p_values"],
+            "num_nan_p_values": run_record["summary"]["num_nan_p_values"],
+            "num_failed_datasets": run_record["summary"]["num_failed_datasets"],
             "peak_gpu_memory_gb": peak_gpu_memory_gb,
             "runtime_seconds": runtime_seconds,
         },

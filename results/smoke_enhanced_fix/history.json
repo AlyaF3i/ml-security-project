@@ -1,0 +1,87 @@
+{
+  "runs": [
+    {
+      "model_name": "EleutherAI/pythia-410m-deduped",
+      "model_label": "Deduped",
+      "model_size_b": 0.41,
+      "dataset_names": [
+        "stackexchange"
+      ],
+      "metric_list": [
+        "k_min_probs",
+        "ppl",
+        "lowercase_ppl",
+        "min_k_plus_plus",
+        "zlib_ratio",
+        "k_max_probs",
+        "perturbation",
+        "reference_model"
+      ],
+      "feature_mode": "full",
+      "metric_cache_dir": "results/metric_cache_smoke",
+      "sample_size": 20,
+      "batch_size": 2,
+      "max_length": 512,
+      "cuda_dtype": "auto",
+      "train_epochs": 1000,
+      "num_random": 1,
+      "normalize": "train",
+      "outliers": "clip",
+      "trim_heldout_frac": 0.0,
+      "runtime_seconds": 18.877965299998323,
+      "peak_gpu_memory_gb": 2.1955323219299316,
+      "summary": {
+        "num_datasets": 1,
+        "num_p_values": 1,
+        "num_finite_p_values": 1,
+        "num_nan_p_values": 0,
+        "mean_p_value": 0.8640122261238856,
+        "median_p_value": 0.8640122261238856,
+        "num_below_0_1": 0
+      },
+      "dataset_results": [
+        {
+          "dataset": "stackexchange",
+          "random_index": 0,
+          "requested_sample_size": 20,
+          "effective_sample_size": 20,
+          "train_split_size": 2000,
+          "val_split_size": 2000,
+          "p_value": 0.8640122261238856,
+          "member_mean_score": -1.9139983534812928,
+          "nonmember_mean_score": -6.031721085309982,
+          "mean_gap_nonmember_minus_member": -4.11772273182869,
+          "num_member_scores": 20,
+          "num_nonmember_scores": 20
+        }
+      ],
+      "requested_dataset_names": [
+        "stackexchange"
+      ],
+      "skipped_dataset_names": [],
+      "available_dataset_names": [
+        "arxiv",
+        "bookcorpus2",
+        "books3",
+        "cc",
+        "enron",
+        "europarl",
+        "freelaw",
+        "github",
+        "gutenberg",
+        "hackernews",
+        "math",
+        "nih",
+        "opensubtitles",
+        "openwebtext2",
+        "philpapers",
+        "stackexchange",
+        "ubuntu",
+        "uspto",
+        "wikipedia",
+        "youtubesubtitles"
+      ],
+      "failed_datasets": []
+    }
+  ]
+}

@@ -4,6 +4,12 @@ import tqdm, json
 
 loss_fct = torch.nn.CrossEntropyLoss(reduction="none")
 
+
+def _sanitize_tensor(values):
+    if values.dtype != torch.float32:
+        values = values.float()
+    return torch.nan_to_num(values, nan=0.0, posinf=1e6, neginf=-1e6)
+
 def raw_values_batch(model, tokenizer, example_list):
     '''
     This function takes a list of strings and returns the loss values for each token in the string
@@ -34,10 +40,10 @@ def raw_values_batch(model, tokenizer, example_list):
     shifted_labels = labels[..., 1:].contiguous().view(-1)
 
     # shift the logits
-    shifted_logits = outputs.logits[..., :-1, :].contiguous()
+    shifted_logits = outputs.logits[..., :-1, :].contiguous().float()
     shifted_logits = shifted_logits.view(-1, shifted_logits.size(-1))
 
-    loss = loss_fct(shifted_logits, shifted_labels)
+    loss = _sanitize_tensor(loss_fct(shifted_logits, shifted_labels))
 
     # reshape the loss to the original shape
     loss = loss.view(labels.size(0), labels.size(1) - 1)
@@ -93,18 +99,18 @@ def raw_values_with_normalized_losses_batch(model, tokenizer, example_list):
     labels[labels == tokenizer.pad_token_id] = -100
 
     shifted_labels = labels[..., 1:].contiguous()
-    shifted_logits = outputs.logits[..., :-1, :].contiguous()
+    shifted_logits = outputs.logits[..., :-1, :].contiguous().float()
     flat_labels = shifted_labels.view(-1)
     flat_logits = shifted_logits.view(-1, shifted_logits.size(-1))
 
-    losses = loss_fct(flat_logits, flat_labels).view(shifted_labels.size(0), shifted_labels.size(1))
-    log_probs = torch.log_softmax(shifted_logits, dim=-1)
-    probs = torch.exp(log_probs)
+    losses = _sanitize_tensor(loss_fct(flat_logits, flat_labels).view(shifted_labels.size(0), shifted_labels.size(1)))
+    log_probs = _sanitize_tensor(torch.log_softmax(shifted_logits, dim=-1))
+    probs = _sanitize_tensor(torch.exp(log_probs))
     neg_log_probs = -log_probs
-    entropy = torch.sum(probs * neg_log_probs, dim=-1)
-    variance = torch.sum(probs * (neg_log_probs - entropy.unsqueeze(-1)) ** 2, dim=-1)
-    std = torch.sqrt(torch.clamp(variance, min=1e-8))
-    normalized_losses = (losses - entropy) / std
+    entropy = _sanitize_tensor(torch.sum(probs * neg_log_probs, dim=-1))
+    variance = _sanitize_tensor(torch.sum(probs * (neg_log_probs - entropy.unsqueeze(-1)) ** 2, dim=-1))
+    std = _sanitize_tensor(torch.sqrt(torch.clamp(variance, min=1e-8)))
+    normalized_losses = _sanitize_tensor((losses - entropy) / std)
 
     valid_mask = shifted_labels != -100
     loss_list = []

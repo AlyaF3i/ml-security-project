@@ -1,0 +1,2 @@
+model_name,model_label,model_size_b,dataset,random_index,p_value
+EleutherAI/pythia-410m-deduped,Deduped,0.41,stackexchange,0,0.8640122261238856

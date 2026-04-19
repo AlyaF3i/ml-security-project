@@ -136,6 +136,8 @@ def remove_outliers(metrics, remove_frac=0.05, outliers = "zero"):
     # Ensure we're not attempting to remove more elements than are present
     if elements_to_remove_each_side * 2 > total_elements:
         raise ValueError("remove_frac is too large, resulting in no elements left.")
+    if elements_to_remove_each_side == 0:
+        return np.copy(metrics)
     
     # Change the removed metrics to 0.
     lowest_ids = sorted_ids[:elements_to_remove_each_side]
