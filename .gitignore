@@ -177,3 +177,4 @@ pyrightconfig.json
 notes.md
 NeurIPS-2024-llm-dataset-inference-did-you-train-on-my-dataset-Paper-Conference.pdf
 git logs
+results/enhanced_metric_cache/*
